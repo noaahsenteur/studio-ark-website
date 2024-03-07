@@ -1,0 +1,21 @@
+---
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/400.css';
+import '../base.scss';
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <!-- @TODO: configure correct meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
