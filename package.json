@@ -16,9 +16,11 @@
     "astro": "^4.4.13",
     "sass": "^1.71.1",
     "tailwindcss": "^3.4.1",
+    "tailwindcss-fluid-type": "^2.0.3",
     "typescript": "^5.4.2"
   },
   "devDependencies": {
+    "fluid-tailwind": "^0.1.6",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-tailwindcss": "^0.5.12"
   }

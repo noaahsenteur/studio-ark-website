@@ -1,92 +1,15 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+import { fluidCorePlugins, fluidExtractor } from 'fluid-tailwind';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: {
+    files: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    extract: fluidExtractor(),
+  },
   theme: {
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
-    },
-    fontSize: {
-      'display-one': [
-        '14rem',
-        {
-          fontWeight: '600',
-          lineHeight: '14.4rem',
-          letterSpacing: '-0.75rem',
-        },
-      ],
-      'display-two': [
-        '11rem',
-        {
-          fontWeight: '600',
-          lineHeight: '11.2rem',
-          letterSpacing: '-0.55rem',
-        },
-      ],
-      'display-three': [
-        '9.8rem',
-        {
-          fontWeight: '600',
-          lineHeight: '10.4rem',
-          letterSpacing: '-0.45rem',
-        },
-      ],
-      'heading-one': [
-        '8.4rem',
-        {
-          fontWeight: '600',
-          lineHeight: '8.9rem',
-          letterSpacing: '-0.35rem',
-        },
-      ],
-      'heading-two': [
-        '6.3rem',
-        {
-          fontWeight: '600',
-          lineHeight: '7.3rem',
-          letterSpacing: '-0.25rem',
-        },
-      ],
-      'heading-three': [
-        '5.4rem',
-        {
-          fontWeight: '600',
-          lineHeight: '6.3rem',
-          letterSpacing: '-0.15rem',
-        },
-      ],
-      'heading-four': [
-        '4.2rem',
-        {
-          fontWeight: '600',
-          lineHeight: '4.6rem',
-          letterSpacing: '-0.02rem',
-        },
-      ],
-      'heading-five': [
-        '3.4rem',
-        {
-          fontWeight: '600',
-          lineHeight: '4rem',
-          letterSpacing: '-0.01rem',
-        },
-      ],
-      'heading-six': [
-        '2.8rem',
-        {
-          fontWeight: '600',
-          lineHeight: '3.4rem',
-          letterSpacing: '-0.06rem',
-        },
-      ],
-      'body-3xl': ['2.6rem', '4rem'],
-      'body-2xl': ['2.2rem', '3.8rem'],
-      'body-xl': ['2rem', '3.2rem'],
-      'body-lg': ['1.8rem', '3rem'],
-      'body-md': ['1.6rem', '2.6rem'],
-      'body-sm': ['1.4rem', '2.2rem'],
-      'body-xs': ['1.2rem', '2rem'],
     },
     colors: {
       white: '#FFFFFF',
@@ -115,6 +38,90 @@ export default {
         50: '#FFEAD8',
       },
     },
+    fluid: {
+      defaultScreens: ['37.5rem', '144rem'],
+    },
+    fontSize: {
+      'display-one': [
+        '14rem',
+        {
+          lineHeight: '14rem',
+          letterSpacing: '-.75rem',
+          fontWeight: '600',
+        },
+      ],
+      'display-two': [
+        '11rem',
+        {
+          lineHeight: '11.2rem',
+          letterSpacing: '-.55rem',
+          fontWeight: '600',
+        },
+      ],
+      'display-three': [
+        '9.8rem',
+        {
+          lineHeight: '10.4rem',
+          letterSpacing: '-.45rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-one': [
+        '8.4rem',
+        {
+          lineHeight: '8.9rem',
+          letterSpacing: '-.35rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-two': [
+        '6.3rem',
+        {
+          lineHeight: '7.3rem',
+          letterSpacing: '-.25rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-three': [
+        '5.4rem',
+        {
+          lineHeight: '6.3rem',
+          letterSpacing: '-.15rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-four': [
+        '4.2rem',
+        {
+          lineHeight: '4.6rem',
+          letterSpacing: '-.2rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-five': [
+        '3.4rem',
+        {
+          lineHeight: '4rem',
+          letterSpacing: '-.1rem',
+          fontWeight: '600',
+        },
+      ],
+      'heading-six': [
+        '2.8rem',
+        {
+          lineHeight: '3.4rem',
+          letterSpacing: '-.06rem',
+          fontWeight: '600',
+        },
+      ],
+      'body-2xl': ['2.6rem', '4rem'],
+      'body-xl': ['2.2rem', '3.8rem'],
+      'body-lg': ['2rem', '3.2rem'],
+      'body-md': ['1.8rem', '3rem'],
+      'body-sm': ['1.6rem', '2.6rem'],
+      'body-xs': ['1.4rem', '2.2rem'],
+      'body-xxs': ['1.2rem', '2rem'],
+    },
   },
-  plugins: [],
+  plugins: [fluidCorePlugins],
 };

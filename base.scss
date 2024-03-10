@@ -1,7 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  min-height: 100dvh;
+  height: 100dvh;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-size: 1.6rem;
+  @apply text-black-700;
+}
+
+main {
+  flex: 1 1 0%;
+}
+
+a {
+  @apply transition-all hover:opacity-50;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-[144.4rem] px-[1.6rem] md:px-32;
+  }
+
+  .btn {
+    @apply block rounded-[3.9rem] border-2 border-black-700 bg-black-700 font-semibold text-white transition-all hover:opacity-50;
+    &-xs {
+      @apply px-8 py-4 text-[1.4rem] leading-[2.4rem];
+    }
+
+    &-sm {
+      @apply px-[2.8rem] py-[1.2rem] text-[1.6rem] leading-[2.8rem] tracking-[-0.02rem];
+    }
+
+    &-md {
+      @apply px-[2.8rem] py-[1.2rem] text-[1.8rem] leading-[3.2rem] tracking-[-0.02rem];
+    }
+
+    &-lg {
+      @apply px-[2.8rem] py-[1.4rem] text-[2rem] leading-[3.4rem];
+    }
+
+    &-xl {
+      @apply px-16 py-8 text-[2.6rem] leading-[3.8rem];
+    }
+
+    &-outline {
+      @apply bg-[transparent]	text-black-700;
+    }
+  }
+
+  .badge {
+    @apply block rounded-[10rem] border border-black-700 bg-black-700 font-semibold text-white;
+
+    &-sm {
+      @apply px-4 text-[1.2rem] leading-[2rem];
+    }
+
+    &-md {
+      @apply px-[1.4rem] py-[.4rem] text-[1.4rem] leading-[2.2rem];
+    }
+
+    &-lg {
+      @apply px-[1.6rem] py-[.4rem] text-[1.6rem] leading-[2.6rem];
+    }
+
+    &-outline {
+      @apply bg-[transparent] text-black-700;
+    }
+
+    &-interactive {
+      @apply transition-all hover:opacity-50;
+    }
+  }
 }

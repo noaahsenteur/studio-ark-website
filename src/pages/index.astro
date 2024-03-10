@@ -1,7 +1,16 @@
 ---
-import BaseLayout from '../base-layout.astro';
+import BaseLayout from '@/src/base-layout.astro';
+import HomepageIntroSection from '@/src/sections/homepage/homepage-intro-section.astro';
+import HomepageServicesSection from '@/src/sections/homepage/homepage-services-section.astro';
+import HomepageProjectsSection from '@/src/sections/homepage/homepage-projects-section.astro';
+import HomepageClientSection from '@/src/sections/homepage/homepage-clients-section.astro';
+import CallToActionSection from '@/src/sections/call-to-action-section.astro';
 ---
 
 <BaseLayout>
-  <h1 class="text-body-3xl">dit is titel</h1>
+  <HomepageIntroSection />
+  <HomepageServicesSection />
+  <HomepageProjectsSection />
+  <HomepageClientSection />
+  <CallToActionSection />
 </BaseLayout>
